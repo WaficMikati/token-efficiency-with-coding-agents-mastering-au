@@ -1,55 +1,57 @@
 ---
 readingTime:
-  minutes: 2.276
-  words: 569
-fkglResult: 8.94
+  minutes: 2.3
+  words: 575
+fkglResult: 8.8
 ---
 
 # 03.2 Using Auto Mode in Cursor
 
-Unlock the power of **Auto mode** in Cursor to speed up your coding workflow while keeping token usage efficient. This lesson guides you through enabling Auto mode, best practices for its use, and practical examples to help you master this feature.
+Cursor takes model selection a step further by offering an **"Auto" option directly in the model picker** — this is what Auto mode really means in Cursor. Instead of you deciding which model to use for each request, Cursor's Auto setting makes that decision dynamically based on what you're asking.
 
-## Enabling Auto Mode in Cursor
+## Where to Find Auto Mode in Cursor
 
-1. Open the Cursor IDE.
-2. Locate the **Auto mode** toggle in the sidebar and switch it **ON**.
-3. Once activated, Cursor will provide continuous, context-aware code suggestions as you type.
+1. Open **Cursor IDE**.
+2. Open the **Chat or Composer panel** (Mac: `Cmd+L` for Chat, `Cmd+I` for Composer — Windows/Linux: `Ctrl+L` / `Ctrl+I`).
+3. Click the **model selector** at the top of the panel (it shows the currently active model name).
+4. Select **"Auto"** from the dropdown list.
 
-## How Auto Mode Works
+Once set to Auto, Cursor evaluates each request and routes it to the model best suited for that specific task — you don't have to change the selector between requests.
 
-- Begin by typing meaningful code snippets, such as a function declaration or component signature.
-- Auto mode will automatically suggest the next parts of your code, including JSX elements or logic.
-- Accept suggestions by pressing the **Tab** key to insert them seamlessly.
-- If a suggestion is not relevant, press **Esc** to dismiss it and continue typing manually.
+## How Cursor's Auto Routing Works
 
-## Best Practices for Token Efficiency
+Cursor considers several signals when routing a request in Auto mode:
 
-- **Type meaningful chunks before accepting suggestions:** Avoid triggering suggestions too frequently to reduce token consumption.
-- **Use inline comments to guide suggestions:** For example, typing `// Add a button that logs 'Clicked' on press` helps Auto mode generate precise code.
-- **Edit prompts incrementally:** If a suggestion is off, tweak your code or comments slightly instead of rejecting large blocks.
+- **Length and complexity of your message** — A short prompt like "rename this variable" goes to a fast model. A long prompt describing a multi-step refactor goes to a more capable one.
+- **Amount of code context included** — More context attached = higher chance of routing to a stronger model.
+- **Type of task** — Explanation tasks tend to route lighter than generation tasks.
 
-## Practical Example
+This means two messages sent back-to-back can go to entirely different models, and that's by design.
 
-Try building a simple Instagram-like sidebar menu:
+## Comparing Manual vs. Auto Model Selection
 
-- Start typing the container `<div>` for the menu.
-- Let Auto mode suggest menu items with icons and labels.
-- Accept or reject suggestions to shape the final code.
+| Scenario | Manual (you pick) | Auto (Cursor picks) |
+|---|---|---|
+| Quick bug fix | You might default to the powerful model out of habit | Routes to a fast, cheap model |
+| Complex architecture task | You might forget to upgrade the model | Routes to the most capable model |
+| Mixed session with varied tasks | You'd need to switch manually each time | Adjusts per request automatically |
 
-This approach balances your typing with Cursor's automation, maximizing efficiency and controlling token usage.
+## When to Override Auto Mode
 
-## Visualizing Auto Mode Interaction
+Auto mode is smart, but it's not perfect. Override it manually when:
 
-![Conceptual illustration of Auto mode in Cursor showing a user typing code on the left, Auto mode generating suggestions in the middle, and the user accepting or dismissing suggestions on the right. The flow is color-coded to differentiate user input, automated suggestions, and decision points, with annotations explaining how each step contributes to efficient code generation and token management. The illustration uses friendly colors and simple shapes to clarify the interaction process.](./.learn/assets/cursor-auto-mode-flow.png)
+- **You know the task is hard** — If you're working through a deeply complex problem and Auto keeps routing light, manually select a stronger model.
+- **You're debugging a subtle issue** — Complex bugs often need more reasoning power than Auto assigns.
+- **You want predictable token usage** — For budgeting or testing, locking in a specific model gives you consistent cost per request.
 
 ## Summary
 
-Using **Auto mode** in Cursor helps you:
+Cursor's Auto mode:
 
-- Write code faster with continuous, context-aware suggestions
-- Maintain token efficiency by balancing typing and accepting suggestions
-- Guide code generation with inline comments
-- Improve your development workflow with less manual effort
+- Lives in the **model selector dropdown** — it is a model choice, not a suggestion toggle
+- Routes each request to the most cost-appropriate model automatically
+- Saves tokens on simple tasks while maintaining quality for complex ones
+- Can be overridden manually whenever you need more control
 
 ---
 
@@ -57,28 +59,28 @@ Using **Auto mode** in Cursor helps you:
 
 Select the correct answer for each question.
 
-1. What is the primary benefit of enabling Auto mode in Cursor?
+1. Where do you activate Auto mode in Cursor?
 
-   - [ ] It disables manual code editing.
-   - [x] It provides continuous, context-aware code suggestions.
-   - [ ] It automatically debugs your code.
+   - [ ] By toggling a switch in Cursor's settings panel.
+   - [x] By selecting "Auto" from the model picker in the Chat or Composer panel.
+   - [ ] By enabling inline suggestions in the editor preferences.
 
-2. How can you maintain token efficiency while using Auto mode?
+2. What does Cursor's Auto mode actually control?
 
-   - [ ] Accept every suggestion immediately without typing.
-   - [ ] Type very short code snippets to trigger more suggestions.
-   - [x] Type meaningful chunks before accepting suggestions and use inline comments to guide output.
+   - [ ] Whether inline code completions appear as you type.
+   - [x] Which AI model processes each individual request.
+   - [ ] The speed of Cursor's file indexing.
 
-3. What should you do if an Auto mode suggestion is off-target?
+3. Which of the following tasks would Auto mode most likely route to a larger, more powerful model?
 
-   - [ ] Accept it and fix the code later.
-   - [x] Press Esc to dismiss it and continue typing manually.
-   - [ ] Restart Cursor to reset suggestions.
+   - [ ] Renaming a function across one file.
+   - [ ] Asking what a single line of code does.
+   - [x] Refactoring an authentication system across multiple files with edge case handling.
 
-4. Which key is used to accept an Auto mode suggestion in Cursor?
+4. When should you manually override Auto mode?
 
-   - [ ] Enter
-   - [x] Tab
-   - [ ] Space
+   - [x] When you know a task is deeply complex and want to ensure the strongest model handles it.
+   - [ ] Every time you open Cursor, to make sure it uses the right model.
+   - [ ] Only when Auto mode is unavailable.
 
-This quiz reinforces your understanding of how to effectively use Auto mode in Cursor while managing token consumption.
+This quiz reinforces your understanding of what Auto mode is and how it connects to token efficiency.

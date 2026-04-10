@@ -1,55 +1,60 @@
 ---
 readingTime:
-  minutes: 1.768
-  words: 442
-fkglResult: 12.96
+  minutes: 1.8
+  words: 450
+fkglResult: 9.2
 ---
 
 # 03.0 Auto Mode Overview in Coding Agents
 
-Imagine having a coding assistant that not only suggests code snippets but also anticipates your needs and offers solutions automatically. This is the power of **Auto mode** in coding agents like GitHub Copilot and Cursor. It transforms the way you interact with these tools by streamlining your workflow and optimizing token usage.
+You've learned that token efficiency is all about sending the right amount of information to the right model. Now let's talk about a feature built directly into tools like **Cursor** and **GitHub Copilot** that automates part of that decision for you: **Auto mode**.
 
-## What is Auto Mode?
+## What Auto Mode Actually Is
 
-**Auto mode** is a feature in AI-powered coding agents that automatically generates code suggestions without requiring you to type detailed prompts or commands. Instead of manually requesting code completions, Auto mode continuously analyzes your context and proactively offers relevant code snippets.
+**Auto mode** is a **model-routing feature**, not an autocomplete feature. When you set your coding agent to Auto, you are telling the tool: *"Don't lock in one model — pick the best one for each request automatically."*
 
-This automation reduces the need for extensive manual input, which in turn minimizes the number of tokens consumed during code generation. Since tokens are the units that coding agents use to process and generate text, using fewer tokens means more efficient and cost-effective coding.
+Modern coding agents have access to several AI models with different capabilities and costs:
 
-## How Does Auto Mode Enhance Efficiency?
+- **Smaller, faster models** (e.g., Claude Haiku, GPT-4o mini) are excellent for short completions, quick questions, and simple edits. They use fewer tokens and respond almost instantly.
+- **Larger, more capable models** (e.g., Claude Sonnet, GPT-4o) handle complex reasoning, multi-file refactors, and nuanced code generation. They use more tokens per request.
 
-- **Reduces manual typing:** Auto mode anticipates your coding needs, so you spend less time writing prompts or instructions.
-- **Minimizes token waste:** By automating suggestions, it avoids unnecessary back-and-forth interactions that consume extra tokens.
-- **Speeds up development:** Faster suggestions mean you can write code more quickly and focus on problem-solving.
-- **Improves consistency:** Automated suggestions help maintain coding style and reduce errors.
+Without Auto mode, you manually pick one model and it handles *everything* — which means you're burning expensive tokens on tasks that didn't need them. **Auto mode solves this.**
 
-## Practical Example
+## How Auto Mode Routes Your Requests
 
-Suppose you're writing a function to sort a list. Instead of typing a detailed prompt asking the agent to generate the sorting code, Auto mode will detect your intent and suggest the function implementation automatically. This saves you time and tokens, letting you focus on refining your code.
+| Task Type | Example | Model Auto Picks |
+|---|---|---|
+| Short inline completion | Finish this `for` loop | Smaller, faster model |
+| Quick explanation | What does this function return? | Smaller, faster model |
+| Complex refactor | Rewrite this module to use async/await | Larger, capable model |
+| Multi-file generation | Scaffold a REST API with auth | Larger, capable model |
+
+The routing happens automatically, behind the scenes. You don't have to think about it — but understanding it helps you write better prompts and predict your token costs.
+
+## What Auto Mode Is NOT
+
+It's important to clear up a common misconception: **Auto mode is not the same as standard autocomplete or inline code suggestions.** Autocomplete — the ghost text that appears as you type — works the same way regardless of whether Auto mode is on or off. Auto mode only affects **which model processes your request**, not whether suggestions appear.
 
 ## Summary
 
-Auto mode in coding agents is a smart automation feature that:
+Auto mode in coding agents:
 
-- Proactively offers code suggestions
-- Saves tokens by reducing manual input
-- Accelerates your coding workflow
-- Helps maintain code quality
-
-Mastering Auto mode empowers you to code smarter, not harder.
+- Automatically selects the most appropriate AI model for each task
+- Uses lighter models for simple work → fewer tokens consumed
+- Uses powerful models for complex work → higher quality output
+- Is a **model-routing feature**, not an autocomplete feature
 
 ---
 
 ### Fill in the blanks to test your understanding!
 
-```fill_in_the_blank 1="Auto mode" 2="tokens" 3="automatically" 4="efficiency"
+```fill_in_the_blank 1="model-routing" 2="tokens" 3="automatically" 4="task complexity"
 
-The feature that provides proactive code suggestions without manual prompts is called _1_.
+Auto mode is a _1_ feature — it does not control whether suggestions appear.
 
-Using Auto mode helps reduce the number of _2_ consumed during code generation.
+Using Auto mode helps reduce the number of _2_ consumed on simple tasks.
 
-Auto mode _3_ generates relevant code snippets based on your current context.
+When Auto mode is active, the tool _3_ selects the best model for each request.
 
-By minimizing manual input and token waste, Auto mode improves coding _4_.
+The key variable Auto mode responds to is _4_.
 ```
-
-![Conceptual illustration of Auto mode in coding agents: a developer typing code on a laptop with a glowing AI assistant icon beside the screen, arrows showing automatic code suggestions flowing from the AI to the code editor, color-coded to differentiate manual input from automated suggestions, with annotations explaining how Auto mode reduces token usage and speeds up coding](./.learn/assets/auto-mode-concept.png)

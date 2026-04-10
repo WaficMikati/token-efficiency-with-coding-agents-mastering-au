@@ -25,10 +25,9 @@ Imagine tokens as the fuel for your coding engine. Using them wisely means your 
 
 - The basics of how token usage works in coding agents.
 - Best practices to balance performance and cost.
-- How the **'Auto' mode** in tools like GitHub Copilot and Cursor can automate model selection and optimize token use.
-- Hands-on exercises to practice these skills.
+- How **Auto mode** in Cursor automatically routes requests to the right AI model — and how to apply the same thinking manually in GitHub Copilot.
 
 Get ready to unlock new ways to code smarter, not harder. Let's dive into the exciting world of token efficiency!
 
-![GENERATING: GENERATING: Conceptual illustration showing a coding agent represented as a friendly robot assisting a developer by efficiently managing tokens symbolized as small blocks flowing smoothly between the developer and the code editor, highlighting the idea of saving time and resources through smart token usage
-](/.learn/assets/rsco26pmrwc)
+![GENERATING: Conceptual illustration showing a coding agent represented as a friendly robot assisting a developer by efficiently managing tokens symbolized as small blocks flowing smoothly between the developer and the code editor, highlighting the idea of saving time and resources through smart token usage
+](/.learn/assets/janyarfcw5b)

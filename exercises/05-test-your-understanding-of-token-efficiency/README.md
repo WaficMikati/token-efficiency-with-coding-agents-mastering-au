@@ -1,13 +1,13 @@
 ---
 readingTime:
-  minutes: 1.38
-  words: 345
-fkglResult: 7.74
+  minutes: 1.4
+  words: 350
+fkglResult: 7.8
 ---
 
-# 04.0 Test Your Understanding of Token Efficiency
+# 05.0 Test Your Understanding of Token Efficiency
 
-Let's put your knowledge to the test! This quiz will help you assess how well you've grasped the concepts of **token efficiency**, **coding agents**, and the advantages of using **Auto mode** in tools like GitHub Copilot and Cursor.
+Let's put your knowledge to the test! This quiz covers everything from this course: **how tokens work**, **best practices for token efficiency**, and the real meaning and purpose of **Auto mode** in tools like GitHub Copilot and Cursor.
 
 Select the correct answer for each question.
 
@@ -15,35 +15,42 @@ Select the correct answer for each question.
 
    - [ ] It allows you to write code without any errors.
    - [x] It helps reduce costs and improves coding efficiency.
-   - [ ] It guarantees the fastest code execution.
-   - [ ] It enables the coding agent to write code automatically without user input.
+   - [ ] It guarantees the fastest code execution possible.
+   - [ ] It enables the coding agent to write code without any user input.
 
-2. How does **Auto mode** in coding agents like GitHub Copilot improve token efficiency?
+2. What does **Auto mode** in Cursor actually do?
 
-   - [ ] By requiring you to type full prompts for every code suggestion.
-   - [ ] By disabling suggestions to save tokens.
-   - [x] By providing continuous, context-aware suggestions that reduce manual input.
-   - [ ] By only suggesting code snippets unrelated to your current project.
+   - [ ] It enables ghost-text inline suggestions as you type in the editor.
+   - [ ] It disables suggestions to save tokens.
+   - [x] It automatically routes each request to the most appropriate AI model based on task complexity.
+   - [ ] It only works with the most powerful model available.
 
-3. Why might using the most powerful model in coding agents not always be the best choice for token efficiency?
+3. Why might using the most powerful model for every task NOT be the best choice for token efficiency?
 
    - [ ] Because powerful models are slower to respond.
-   - [x] Because they consume more tokens and may increase costs unnecessarily.
+   - [x] Because they consume more tokens per request and may increase costs unnecessarily for simple tasks.
    - [ ] Because they do not support Auto mode.
    - [ ] Because they produce less accurate code suggestions.
 
-4. Which of the following is a best practice to maximize the benefits of Auto mode?
+4. Which of the following tasks is the best candidate for a **lightweight model**?
 
-   - [ ] Avoid writing comments to prevent confusion.
-   - [x] Write clear, descriptive comments to guide suggestions.
-   - [ ] Type complete functions manually before accepting suggestions.
-   - [ ] Disable Auto mode when working on complex projects.
+   - [x] Asking "What does this function return?" about a short code snippet.
+   - [ ] Refactoring an authentication module across five files with edge case handling.
+   - [ ] Designing a database schema for a multi-tenant SaaS application.
+   - [ ] Debugging a complex race condition in an async system.
 
-5. What does accepting well-targeted suggestions in Auto mode help you achieve?
+5. What is the most important reason to write **clear, specific prompts** when using coding agents?
 
-   - [ ] It increases the number of tokens used.
-   - [ ] It replaces the need to review your code.
-   - [x] It minimizes manual typing and token consumption.
-   - [ ] It automatically debugs your code.
+   - [ ] To make the agent use a more powerful model every time.
+   - [ ] To increase the number of tokens used and get longer responses.
+   - [x] To help the agent understand the task precisely, reducing unnecessary back-and-forth and wasted tokens.
+   - [ ] To avoid triggering Auto mode accidentally.
 
-Good luck!
+6. When should you manually **override Auto mode** and select a specific model yourself?
+
+   - [ ] Every time you start a new Cursor session.
+   - [ ] Whenever you're writing JavaScript instead of Python.
+   - [x] When you know a task is complex and want to guarantee it's handled by the most capable model.
+   - [ ] When you want to disable inline code suggestions.
+
+Good luck — and remember: smarter token use means faster, cheaper, and better coding!

@@ -29,11 +29,11 @@ Providing focused context helps the agent generate relevant code without wasting
 
 ### 3. Use Auto Mode Features
 
-Tools like GitHub Copilot's **Auto mode** automate suggestions efficiently, reducing manual input and token waste.
+Tools like Cursor offer an **Auto mode** that automatically routes each request to the most appropriate AI model — using a lighter, cheaper model for simple tasks and a more powerful one for complex work. This means you're not always paying for the most expensive model even when you don't need it.
 
 ### 4. Monitor and Adjust
 
-Keep an eye on token usage and adjust your approach as needed to maintain a balance between cost and performance.
+Token usage isn't always visible directly, but you can watch for proxy signals: responses that feel slower than usual, sessions where you're repeatedly reprompting to get usable output, or a rising API bill at the end of the month. When you notice these, it's a sign to audit your habits — are you using the right model for each task? Are your prompts as focused as they could be? Small adjustments compound quickly.
 
 ## Practical Example
 
@@ -70,7 +70,7 @@ Select the correct answer for each question.
 3. How does using Auto mode in coding agents help with token efficiency?
 
    - [ ] It requires you to type more, increasing token consumption.
-   - [x] It automates suggestions, reducing manual input and token waste.
+   - [x] It automatically routes each request to the most cost-appropriate model, so you aren't over-spending on simple tasks.
    - [ ] It disables token counting, so you don't have to worry about efficiency.
 
 4. What should you do if you notice high token usage during development?
